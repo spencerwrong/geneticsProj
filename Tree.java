@@ -20,5 +20,13 @@ public class Tree
 		// create the parent node of the layer below you
 		// set nodes of parents
 		// create a node containing traits of parents
+
+		Node x = new Node( ___ );
+		if(x.color != null)
+		{
+			//ask for color again
+		}
+		left = askParents();
+		right = askParents();
 	}
 }
