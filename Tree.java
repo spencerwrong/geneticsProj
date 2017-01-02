@@ -1,6 +1,6 @@
 public class Tree 
 {
-	public class Node
+	public class Nodes
 	{
 		String yourEyeColor;
 		Node left;
@@ -30,3 +30,4 @@ public class Tree
 		right = askParents();
 	}
 }
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
