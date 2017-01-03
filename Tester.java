@@ -1,9 +1,9 @@
-#!/bin/sh
+//#!/bin/sh
 
-exec vim "$@"
-import java.util.io*;
+//exec vim "$@"
+import java.util.Scanner;
 
-public class Tester()
+public class Tester 
 {
 	public static void main(String[] args)
 	{

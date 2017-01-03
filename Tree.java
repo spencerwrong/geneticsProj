@@ -1,33 +1,49 @@
+import java.util.Scanner;
+
 public class Tree 
 {
-	public class Nodes
+	private class Node
 	{
 		String yourEyeColor;
 		Node left;
-		Node right;
-	}
+		Node right;   //no need for Node.next cause of Node left and Node right;
+	                                                                              
 
-	public Node(String yourEyeColor)
-	{
-		this.yourEyeColor = yourEyeColor;
+	  public Node(String EyeColor)
+	  {
+		this.yourEyeColor = EyeColor;
 		left = askParents();
 		right = askParents();
+	  }
+    }
 
-	}
-	public void askParents()
+   /* public String getEyeColor()
+     {
+     	  String x = this.yourEyeColor;
+     	  return x;
+     }*/
+	public Node askParents()
 	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the eye color for this slot if you do not know enter n/a");
+
+
 		// input mom/dad traits
 		// create the parent node of the layer below you
 		// set nodes of parents
 		// create a node containing traits of parents
 
-		Node x = new Node( ___ );
-		if(x.color != null)
+		Node x = new Node(sc.next());
+	   if(x.yourEyeColor.equals("n/a"))           //base case is that the user doesnt know the eye color for that slot
 		{
-			//ask for color again
+			return x;                //if the user cannot give you an answer to this slot then end the recursion and go to another slot
 		}
-		left = askParents();
-		right = askParents();
+		x.left = askParents();
+		System.out.println("done with left side");
+		x.right = askParents();
+		System.out.println("done with right side");
+		return x;
+        
 	}
 }
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
+//ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
