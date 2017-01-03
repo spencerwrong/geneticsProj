@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Tree 
 {
-	private class Node
+	public class Node
 	{
 		String yourEyeColor;
 		Node left;
@@ -22,6 +22,19 @@ public class Tree
      	  String x = this.yourEyeColor;
      	  return x;
      }*/
+     private Node root;
+
+
+     public Tree(String eyeColor)
+     {
+         root = new Node(eyeColor);
+     }
+ 
+     public Node getRoot()
+     {
+        return root;
+
+     }
 	public Node askParents()
 	{
 		Scanner sc = new Scanner(System.in);
@@ -34,7 +47,7 @@ public class Tree
 		// create a node containing traits of parents
 
 		Node x = new Node(sc.next());
-	   if(x.yourEyeColor.equals("n/a"))           //base case is that the user doesnt know the eye color for that slot
+	   if(x.yourEyeColor.compareTo("n/a")==0)           //base case is that the user doesnt know the eye color for that slot
 		{
 			return x;                //if the user cannot give you an answer to this slot then end the recursion and go to another slot
 		}
