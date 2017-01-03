@@ -1,10 +1,18 @@
 import java.util.Scanner;
 
+/** 
+ * Creates a Person with given traits and a whether the domininant gene is expressed.
+ */
 public class Person
 {
 	private boolean dominant; // true = brown eyes / false = blue eyes
 	private String traits;
 
+	/**
+	 * Constructs a Person object.
+	 * @param dominant whether the expressed trait is dominant or recessive
+	 * @param string containing the traits for the Person.
+	 */
 	public Person(boolean dominant, traits)
 	{
 		this.dominant = dominant;
@@ -21,6 +29,20 @@ public class Person
 			Scanner input = new Scanner(System.in);
 			System.out.print("Please enter the traits (e.g. BB, Bb or bb)");
 			traits = input.nextLine();
+			
+			// 1st check
+			// traits must be length 2
+			if(traits.length != 2)
+			{
+				throw new Exception("Traits must be exactly length 2");
+			}
+
+			// 2nd check
+			// first letter is different from 2nd letter
+			if(!traits.toLowerCase().charAt(0).equals(traits.toLowerCase().charAt(1)))
+			{
+				throw new Exception("Traits must contain the same letter");
+			}
 			System.out.println(traits);
 		}
 	}
