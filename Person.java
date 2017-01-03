@@ -25,17 +25,22 @@ public class Person
 		}
 	}
 
-	// Determines if the expressed gene is Dominant or recessive (BB or Bb = dominant | bb = recessive)
+	// Determines if the expressed gene is dominant or recessive (BB or Bb = dominant | bb = recessive)
 	/**
-	 * @return
+	 * @return true if the expressed trait is dominant
 	 */
 	public boolean isDominant()
 	{
-		if()
+		if(!traits.hasUppercase()) // if there is no uppercase letter the expressed trait must be dominant.
+		{
+			return false;
+		}
+		return true;
 	}
 	
 	/**
-	 * @return
+	 * Returns the string containing the traits.
+	 * @return the string contianing the traits.
 	 */
  	public String getTraits()
  	{
@@ -44,30 +49,28 @@ public class Person
 
  	/**
  	 * Returns true if the dominant trait is expressed.
- 	 * @return
+ 	 * @return true if the dominant trait is expressed.
  	 */
  	public boolean getDomoinant()
  	{
  		return dominant;
  	}
 
- 	/**
- 	 * Determines if a string contains a lowercase letter
- 	 * @return
+	/**
+ 	 * Determines if a string contains an lowercase letter
+ 	 * @return true if a lowercase letter is present.
  	 */
- 	public boolean hasUppercase()
+ 	public boolean hasLowercase()
  	{
-
+ 		return !(traits.equals(traits.toUpperCase()));
  	}
 
  	/**
  	 * Determines if a string contains an uppercase letter
- 	 * @return
+ 	 * @return true if an uppercase letter is present.
  	 */
- 	public boolean hasLowercase()
+ 	public boolean hasUppercase()
  	{
-
+ 		return !(traits.equals(traits.toLowerCase()));
  	}
-
-
 }
