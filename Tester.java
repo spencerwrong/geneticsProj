@@ -10,8 +10,8 @@ public class Tester
 		Scanner scan = new Scanner(System.in);
 		System.out.println("What color is your eye?");
 		Tree user = new Tree(scan.next());
-		
-		System.out.println(user.getRoot().yourEyeColor);
+		System.out.println("tree is created");
+		System.out.println("Your eye color is:"+user.getRoot().yourEyeColor);
 		scan.close();
 
 	}
