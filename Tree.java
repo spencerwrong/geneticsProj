@@ -57,10 +57,11 @@ public class Tree
          System.out.println("done with  Tree constructor");
      }
  
+
      public Node getRoot()
      {
+        
         return root;
-
      }
 
      public String getColor()
@@ -132,6 +133,18 @@ public class Tree
 		return x;
         }*/
         return x;
+	}
+
+	public void moveLeft()
+	{
+
+		root=root.left;
+	}
+
+	public void moveRight()
+	{
+
+		root=root.right;
 	}
 }
 //ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
